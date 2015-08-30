@@ -41,5 +41,5 @@ Steps to run the game
 4. Input Player name to play the game. Two players should not have the same name else the second player with the same name will not be able to login.
 
 
-Note:
-1. If you want to run the Build.xml again, stop the rmi registry which is running
+Note:  
+1. If you want to run the Build.xml again, stop the rmi registry which is running..
