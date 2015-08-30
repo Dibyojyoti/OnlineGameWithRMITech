@@ -15,6 +15,7 @@ not delete the model etc.
 *Server:*
 - The server sends the current position of the fly to all clients
 - The server distributes all changes to all players (points, fly hunted, participants)
+
 *Client:*
 - The client sends all changes (one point gained, fly hunted, etc.) to the server.
 - The client should load the stubs from the server codebase (file-url should suffice)
