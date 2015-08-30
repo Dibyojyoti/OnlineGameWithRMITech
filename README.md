@@ -2,10 +2,12 @@
 
 Multi user  game application Distributed Systems  Project in Winter 2014-15 semester at Technische Universität Darmstadt.
 
-Group Members
+*Group Members*
 
 Dibyojyoti Sanyal (https://github.com/Dibyojyoti) (@Dibyojyoti)
+
 Anirban Chatterjee (https://github.com/anirban99) (@anirban99)
+
 Pranay Sarkar (https://github.com/pranay22) (@pranay22)
 
 This is a multi user Fly Hunting Game using Java RMI technology.
