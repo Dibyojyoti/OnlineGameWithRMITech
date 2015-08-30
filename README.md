@@ -1,4 +1,13 @@
-# OnlineGameWithRMITech
+## OnlineGameWithRMITech
+
+Multi user  game application Distributed Systems  Project in Winter 2014-15 semester at Technische Universität Darmstadt.
+
+Group Members
+
+Dibyojyoti Sanyal (https://github.com/Dibyojyoti) (@Dibyojyoti)
+Anirban Chatterjee (https://github.com/anirban99) (@anirban99)
+Pranay Sarkar (https://github.com/pranay22) (@pranay22)
+
 This is a multi user Fly Hunting Game using Java RMI technology.
 
 The Game is implemented as a Client/Server application based on Java RMI. The game is about hunting a fly with a fly flap. On the GUI a fly randomly appears. By pressing the mouse on top of the fly, the fly was “hunted”. The player who caught the fly first gets a point. Once the fly was hunted it re-appears at a different position. All players see the same fly at the same
