@@ -1,0 +1,71 @@
+
+<project name="TK1_P1" default="test">
+	
+	<description>
+		TK1 - Programmieraufgabe 1
+	</description>	
+
+    <target name="clean">
+    	<delete failonerror="false" dir="bin" />
+    	<mkdir dir="bin" />  
+    </target> 
+	
+
+
+    <target name="compile" depends="clean">
+    	<!--compile the .java files -->       	
+        <javac includeantruntime="true" srcdir="src" destdir="bin" includes="**/*.java"  > </javac>  <!-- verbose="true"-->
+    	 <rmic classname="server.FlyRemoteObj" base="bin/" >      		
+    		 <classpath>   
+    		 	    <pathelement location="bin/"/>    		    	
+    	   	</classpath>
+    	  </rmic> 
+    </target>
+
+    <target name="jar" depends="compile">
+    	
+    	<mkdir dir="jar" />
+    	<!-- generate server jar -->
+    	<jar destfile="jar/TK1_P1_server.jar" basedir="bin" >
+    	       <manifest>
+    	            <attribute name="Main-Class" value="server.FlyRemoteObjLauncher" />    	        	
+    	        </manifest> 
+    	 </jar>
+    	<!-- generate client jar -->
+    	<jar destfile="jar/TK1_P1_client.jar" basedir="bin" >
+    		    <manifest>
+    		    	 <attribute name="Main-Class" value="client.Login" />
+                </manifest> 
+    	 </jar>
+    </target>
+
+    <target name="run" depends="jar">
+    	<parallel>
+    		<!-- start server -->
+    		    		
+        	<property name="codebase.jar" value="-Djava.rmi.server.codebase=file:${workspace_loc:/TK1_P1/jar/TK1_P1_server.jar}"/>
+    		<property name="security.policy" value="-Djava.security.policy=./security.policy"/>
+    		<property name="useCodebaseOnly.jar" value="-Djava.security.useCodebaseOnly=true"/>
+    
+    	    <java fork="true" failonerror="yes" classpath="jar/TK1_P1_server.jar" classname="server.FlyRemoteObjLauncher">    	    	
+    	 	<jvmarg line = "${codebase.jar} ${security.policy} ${useCodebaseOnly.jar}" />
+
+    	    </java>
+    		<!-- start client1 -->
+    	    <java fork="true" failonerror="yes" classpath="jar/TK1_P1_client.jar" classname="client.Login">    	    	
+        	 	<jvmarg line = "${security.policy} ${useCodebaseOnly.jar}" />
+    	    	    <arg value="127.0.1.1"/> 
+    		</java>
+    		<!-- start client2 -->    		
+    		<java fork="true" failonerror="yes" classpath="jar/TK1_P1_client.jar" classname="client.Login">
+    			<jvmarg line = "${security.policy} ${useCodebaseOnly.jar}" />
+    			<arg value="127.0.1.1"/> 
+    		</java>
+    		
+    		
+    	</parallel>   
+     </target>
+		
+     <target name="test" depends="run">
+     </target>
+ </project>
