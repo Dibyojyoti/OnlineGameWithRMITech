@@ -1,5 +1,7 @@
 ## OnlineGameWithRMITech
 
+Dibyojyoti Sanyal, Pranay Sarkar, Anirban Chatterjee
+
 Multi user  game application Distributed Systems  Project in Winter 2014-15 semester at Technische Universität Darmstadt.
 
 *Group Members*
