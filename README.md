@@ -4,11 +4,9 @@ Multi user  game application Distributed Systems  Project in Winter 2014-15 seme
 
 *Group Members*
 
-Dibyojyoti Sanyal (https://github.com/Dibyojyoti) (@Dibyojyoti)
-
-Anirban Chatterjee (https://github.com/anirban99) (@anirban99)
-
-Pranay Sarkar (https://github.com/pranay22) (@pranay22)
+1. Dibyojyoti Sanyal (https://github.com/Dibyojyoti) (@Dibyojyoti)
+2. Anirban Chatterjee (https://github.com/anirban99) (@anirban99)
+3. Pranay Sarkar (https://github.com/pranay22) (@pranay22)
 
 This is a multi user Fly Hunting Game using Java RMI technology.
 
@@ -30,3 +28,16 @@ not delete the model etc.
 *Client:*
 - The client sends all changes (one point gained, fly hunted, etc.) to the server.
 - The client should load the stubs from the server codebase (file-url should suffice)
+
+*How to execute*
+
+Steps to run the game
+
+1. Get the local machine IP address. You can also see the local IP address which will be displayed after the server is run. 
+2. Set the IP address in arg value(e.g. arg value="127.0.1.1") in the Build.xml
+3. Run the Build.xml
+4. Input Player name to play the game. Two players should not have the same name else the second player with the same name will not be able to login.
+
+
+Note:
+1. If you want to run the Build.xml again, stop the rmi registry which is running
