@@ -42,4 +42,4 @@ Steps to run the game
 
 
 Note:
-1. If you want to run the Build.xml again, stop the rmi registry which is running
+1. If you want to run the Build.xml again, stop the rmi registry which is running.
